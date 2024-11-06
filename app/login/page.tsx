@@ -18,10 +18,10 @@ export default async function LoginPage() {
   }
 
   return (
-    <div className="grid h-full grid-cols-2 bg-background">
+    <div className="grid h-full grid-cols-2 bg-black">
       {/* LEFT  */}
-      <div className="px-8 py-12">
-        <div className="h-full w-full items-center">
+      <div className="h-full px-8 py-12">
+        <div className="flex h-full w-full items-center justify-center">
           <div className="w-full max-w-lg">
             <Image
               width={174}
@@ -32,13 +32,13 @@ export default async function LoginPage() {
             />
 
             <h1 className="text-2xl font-bold text-white">Bem-vindo</h1>
-            <p className="mb-8 text-base font-light text-primary-foreground">
+            <p className="mb-8 text-base font-light text-muted-foreground">
               A Finance AI é uma plataforma de gestão financeira que utiliza IA
               para monitorar suas movimentações, e oferecer insights
               personalizados, facilitando o controle do seu orçamento.
             </p>
-            <Button variant="outline">
-              <SignInButton>
+            <SignInButton>
+              <Button variant="outline">
                 <Image
                   width={20}
                   height={20}
@@ -47,8 +47,8 @@ export default async function LoginPage() {
                   src="/google-icon.png"
                 />
                 Entrar com Google
-              </SignInButton>
-            </Button>
+              </Button>
+            </SignInButton>
           </div>
         </div>
       </div>
