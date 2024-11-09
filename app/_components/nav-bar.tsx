@@ -11,7 +11,7 @@ export const NavBar = () => {
   const pathName = usePathname();
 
   return (
-    <nav className="flex items-center justify-between border-b border-solid px-8 py-4">
+    <nav className="mb-6 flex items-center justify-between border-b border-solid px-8 py-4">
       <div className="flex items-center gap-12">
         <Link href="/">
           <Image
