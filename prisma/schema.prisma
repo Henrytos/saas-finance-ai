@@ -18,7 +18,8 @@ model Transaction {
   amount      Decimal             @db.Decimal(10, 2)
   description String
   type        TransactionType
-  cateory     TransactionCategory
+  category    TransactionCategory
+  method      TransactionMethod
   date        DateTime?
   userId      String              @map("user_id")
 
@@ -41,4 +42,10 @@ enum TransactionCategory {
   ENTERTAINMENT
   HEALTH
   OTHER
+}
+
+enum TransactionMethod {
+  CASH
+  CARD
+  PIX
 }
