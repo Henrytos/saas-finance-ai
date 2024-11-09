@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 
-const geistSans = localFont({
-  src: "./_fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./_fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+import { Mulish } from "next/font/google";
+import "./globals.css";
+
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+
+const mulish = Mulish({
+  subsets: ["latin-ext"],
+  weight: ["200", "400", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -25,11 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ClerkProvider>{children}</ClerkProvider>
+    <html lang="pt-br">
+      <body className={`${mulish.style} dark antialiased`}>
+        <ClerkProvider
+          appearance={{
+            baseTheme: dark,
+          }}
+        >
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );
